@@ -1,5 +1,5 @@
 # Team Profile Generator
-https://github.com/chichiulam2022/Team Profile Generator
+https://github.com/chichiulam2022/team_profile_generator
 
 ## Description
 This project is to help generate a team profile using Node.js and inquirer
