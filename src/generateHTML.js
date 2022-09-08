@@ -6,7 +6,7 @@ const generateHTML = (team) => {
         <div class="col-4 mt-4 teamcard">
                 <div class="card">
                     <div class="card-header bg-primary">
-                        <h3>${manager.getName()}</h3>
+                        <h3>${manager.getName().toUpperCase()}</h3>
                         <h4>${manager.getRole()}</h4><i class="fa-sharp fa-solid fa-people-roof fa-xl"></i>
                     </div>
                     <div class="card-body">
@@ -25,7 +25,7 @@ const generateHTML = (team) => {
         <div class="col-4 mt-4 teamcard">
             <div class="card">
                 <div class="card-header bg-success">
-                    <h3>${engineer.getName()}</h3>
+                    <h3>${engineer.getName().toUpperCase()}</h3>
                     <h4>${engineer.getRole()}</h4><i class="fa-solid fa-computer fa-xl"></i>
                 </div>
                 <div class="card-body">
@@ -44,7 +44,7 @@ const generateHTML = (team) => {
         <div class="col-4 mt-4 teamcard">
             <div class="card">
                 <div class="card-header bg-danger">
-                    <h3>${intern.getName()}</h3>
+                    <h3>${intern.getName().toUpperCase()}</h3>
                     <h4>${intern.getRole()}</h4><i class="fa-solid fa-graduation-cap fa-xl"></i>
                 </div>
                 <div class="card-body">
@@ -58,7 +58,6 @@ const generateHTML = (team) => {
     };
 
     const html = [];
-
     html.push(
         team
             .filter((employee) => employee.getRole() === "Manager")
@@ -80,7 +79,6 @@ const generateHTML = (team) => {
     return html.join("")
 };
 
-// export function to generate entire page
 module.exports = (team) => {
     return `
     <!DOCTYPE html>
