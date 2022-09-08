@@ -50,7 +50,7 @@ const promptManager = () => {
 
 const choiceMenu = () => {
     return inquirer.prompt([{
-        type: 'list',
+        type: 'rawlist',
         name: 'menu',
         message: 'Choice the following option to continue:',
         choices: ['add a new engineer', 'add a new intern', 'finish your profile']
@@ -67,7 +67,7 @@ const choiceMenu = () => {
                     finishPrompt();
                     console.log(`
                     ============================================================================
-                    Your Team Profile Has Successfully Been Generated, Go Check The Output File.
+                    Your Team Profile Has Successfully Been Generated, Go Check The dist Folder.
                     ============================================================================
                     `)
                     break
@@ -79,7 +79,8 @@ const promptEngineer = () => {
     console.log(`
     ==================
     Add a New Engineer
-    ==================`)
+    ==================
+    `)
 
     return inquirer.prompt([
         {
@@ -126,7 +127,8 @@ const promptIntern = () => {
     console.log(`
         ================
         Add a New Intern
-        ================ `);
+        ================ 
+        `);
 
     return inquirer.prompt([
         {
@@ -167,7 +169,7 @@ const promptIntern = () => {
 };
 
 const finishPrompt = () => {
-    fs.writeFileSync('./output/teamprofile.html', generateHTML(teamProfileArr))
+    fs.writeFileSync('./dist/teamprofile.html', generateHTML(teamProfileArr))
 }
 
 promptManager()
