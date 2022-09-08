@@ -5,11 +5,13 @@ const generateHTML = (team) => {
             .filter((teamMember) => teamMember.getRole() === "Manager")
             .map(manager => generateManager(manager))
     );
+
     html.push(
         team
             .filter((teamMember) => teamMember.getRole() === "Engineer")
             .map(engineer => generateEngineer(engineer))
     );
+
     html.push(
         team
             .filter((teamMember) => teamMember.getRole() === "Intern")
@@ -29,7 +31,7 @@ const generateManager = manager => (
                     <div class="card-body">
                         <p class="id">ID: ${manager.getId()}</p>
                         <p class="email">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
-                        <p class="office">Office Number: ${manager.getOfficeNumber()}</p>
+                        <p class="office">Office Number: ${manager.officeNumber}</p>
                     </div>
                 </div>
         </div>
@@ -55,6 +57,7 @@ const generateEngineer = engineer => (
 );
 
 const generateIntern = intern => (
+
     `
         <div class="col-4 mt-4 teamcard">
             <div class="card">
