@@ -168,6 +168,7 @@ const promptIntern = () => {
         })
 };
 
+
 const finishPrompt = () => {
     fs.writeFileSync('./dist/teamprofile.html', generateHTML(teamProfileArr))
 }
